@@ -2,87 +2,68 @@
 
 The public RESTful API for the Ensembl Gene Autocomplete data table. ( A demo repository created in order to demonstrate REST API skills )
 
-## Getting Started
+### Tech
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Ensembl Public REST API uses a number of open source projects to work properly:
 
-### Prerequisites
+* Flask
+* flask_restful
+* flask_script
+* flask_migrate
+* marshmallow
+* flask_sqlalchemy
+* flask_marshmallow
+* marshmallow-sqlalchemy
+* psycopg2
+* mysqlclient
 
-What things you need to install the software and how to install them
+### Installation
 
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+Clone this repository and enter the repository. You need to have `python` and `pip` installed in your working environment.
 
 ```
-until finished
+git clone https://github.com/chanakaDe/ensembl-public-rest.git
+cd ensembl-public-rest
+```
+Then you have to creates a virtual environment.
+```
+python3.6 -m venv env
+```
+Or if you have python, use following command:
+```
+python -m venv env
+```
+Then you need to activate the virtual environment.
+```
+source env/bin/activate
+```
+Then you need to install all the dependencies.
+```
+pip install -r requirements.txt
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+You must have MySQL installed in your development environment and needed to set global path for MySQL. Otherwise you might get errors when installing `mysqlclient` via `pip` in the `requirements.txt` file.
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+#### Optional
+If you need to change the database connection, use `config.py` file to change `SQLALCHEMY_DATABASE_URI` parameter.
 
 ```
-Give an example
+SQLALCHEMY_DATABASE_URI = "mysql://anonymous@ensembldb.ensembl.org:3306/ensembl_website_97"
 ```
+This is a public database and users don't need to enter any password.
 
-### And coding style tests
-
-Explain what these tests test and why
-
+Finally start the server.
 ```
-Give an example
+python run.py
 ```
+If you configured everything correctly, you will see following output in your terminal.
+```
+Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+Restarting with stat
+Debugger is active!
+Debugger PIN: xxx:xxx:xxx
+```
+For more information about the testing of Ensembl Public REST API : [TESTING.md](https://github.com/chanakaDe/ensembl-public-rest/blob/master/TESTING.md)
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+For more information about the deployment of Ensembl Public REST API : [DEPLOY.md](https://github.com/chanakaDe/ensembl-public-rest/blob/master/DEPLOY.md)
 
