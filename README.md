@@ -15,7 +15,7 @@ Ensembl Public REST API uses a number of open source projects to work properly:
 * flask_marshmallow
 * marshmallow-sqlalchemy
 * psycopg2
-* mysqlclient
+* pymysql
 
 ### Installation
 
@@ -41,8 +41,6 @@ Then you need to install all the dependencies.
 ```
 pip install -r requirements.txt
 ```
-
-You must have MySQL installed in your development environment and needed to set global path for MySQL. Otherwise you might get errors when installing `mysqlclient` via `pip` in the `requirements.txt` file.
 
 #### Optional
 If you need to change the database connection, use `config.py` file to change `SQLALCHEMY_DATABASE_URI` parameter.
