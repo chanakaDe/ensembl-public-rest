@@ -1,6 +1,6 @@
 # Ensembl Public REST API
 
-The public RESTful API for the Ensembl Gene Autocomplete data table. ( A demo repository created in order to demonstrate REST API skills )
+The public RESTful API for the Ensembl Gene Autocomplete data table. 
 
 ### Tech
 
